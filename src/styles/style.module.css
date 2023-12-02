@@ -1,0 +1,85 @@
+/* styles/style.module.css */
+
+/* Common styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inputStyle {
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100%; /* Make the input take full width on smaller screens */
+}
+
+.buttonStyle {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Make the button take full width on smaller screens */
+}
+
+/* Updated styles for the disabled button */
+.buttonStyle:disabled {
+  background-color: #555; /* Dark grey */
+  color: white;
+}
+
+.resultContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.shortUrlStyle {
+  color: #3498db;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* New styles for recent URLs */
+.urlListContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.urlListContainer h2 {
+  margin-bottom: 10px;
+}
+
+.urlListContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.urlListContainer li {
+  margin-bottom: 5px;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+  /* Adjust styles for screens with a maximum width of 600 pixels */
+  .inputStyle {
+    width: 100%; /* Make the input take full width on smaller screens */
+  }
+
+  .buttonStyle {
+    width: 100%; /* Make the button take full width on smaller screens */
+  }
+}
