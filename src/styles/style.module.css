@@ -1,11 +1,116 @@
 /* styles/style.module.css */
 
 /* Common styles */
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+} */
+
+/* .inputContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  /* align-items: center;
+  margin-bottom: 20px;
+} */ 
+
+/* .inputStyle {
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100%; /* Make the input take full width on smaller screens */
+  /* border-radius: 30px;
+} */ 
+
+/* .buttonStyle {
+  padding: 10px;
+  background-color: #4c6baf;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Make the button take full width on smaller screens */
+  /* border-radius: 30px; /* Adjust the value to control the border curvature */
+/* } */ 
+ 
+
+/* Updated styles for the disabled button */
+/* .buttonStyle:disabled {
+  background-color: #555; /* Dark grey */
+  /* color: white;
+} */ 
+
+/* .resultContainer {
+  text-align: center;
+  margin-top: 20px;
+} */
+
+/* .shortUrlStyle {
+  color: #3498db;
+  font-weight: bold;
+  text-decoration: none;
+} */
+
+/* New styles for recent URLs */
+/* .urlListContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* .urlListContainer h2 {
+  margin-bottom: 10px;
+} */
+
+/* .urlListContainer ul {
+  list-style: none;
+  padding: 0;
+} */
+
+/* .urlListContainer li {
+  margin-bottom: 5px;
+} */
+
+/* Media queries for responsiveness */
+/* @media only screen and (max-width: 600px) {
+  /* Adjust styles for screens with a maximum width of 600 pixels */
+  /* .inputStyle {
+    width: 100%; /* Make the input take full width on smaller screens */
+  /* } */ 
+
+  /* .buttonStyle {
+    width: 100%;
+    ; /* Make the button take full width on smaller screens */
+  /* }
+} */ 
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color:white;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  max-width: 800px; /* Set a maximum width for the container */
+  padding: 20px; /* Add padding for a cleaner look */
+  border: 1px solid #ddd; /* Add a border around the container */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  background-color: rgb(194, 237, 251);
+}
+
+.contentContainer {
+  flex-grow: 1;
 }
 
 .inputContainer {
@@ -20,20 +125,22 @@
   margin-right: 10px;
   margin-bottom: 10px;
   width: 100%; /* Make the input take full width on smaller screens */
+  border-radius: 30px;
 }
 
 .buttonStyle {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #43bc69;
   color: white;
   border: none;
   cursor: pointer;
-  width: 100%; /* Make the button take full width on smaller screens */
+  width: 50%; /* Make the button take full width on smaller screens */
+  border-radius: 30px; /* Adjust the value to control the border curvature */
 }
 
 /* Updated styles for the disabled button */
 .buttonStyle:disabled {
-  background-color: #555; /* Dark grey */
+  background-color: #555555; /* Dark grey */
   color: white;
 }
 
@@ -48,18 +155,18 @@
   text-decoration: none;
 }
 
-/* New styles for recent URLs */
+/* New styles for the recent URLs */
 .urlListContainer {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  width: 40%; /* Adjust the width as needed */
   background-color: #f1f1f1;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  border: 1px solid black;
 }
 
-.urlListContainer h2 {
+.urlListContainer h3 {
   margin-bottom: 10px;
 }
 
@@ -74,12 +181,13 @@
 
 /* Media queries for responsiveness */
 @media only screen and (max-width: 600px) {
-  /* Adjust styles for screens with a maximum width of 600 pixels */
-  .inputStyle {
-    width: 100%; /* Make the input take full width on smaller screens */
+  .container {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .buttonStyle {
-    width: 100%; /* Make the button take full width on smaller screens */
+  .urlListContainer {
+    width: 100%;
+    margin-top: 10px;
   }
 }

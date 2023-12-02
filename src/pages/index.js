@@ -84,35 +84,40 @@ export default function Home() {
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
-  return (
+return (
+  <div className={styles.pageContainer}>
     <div className={styles.container}>
-      <h1>URL Shortener</h1>
-      <div className={styles.inputContainer}>
-        <input
-          type="text"
-          value={originalUrl}
-          onChange={(e) => setOriginalUrl(e.target.value)}
-          className={styles.inputStyle}
-          placeholder="Enter your URL"
-        />
-        <button onClick={debouncedHandleShorten} className={styles.buttonStyle}>
-          Shorten URL
-        </button>
-      </div>
-      {showShortUrl && shortUrl && (
-        <div className={styles.resultContainer}>
-          <p>Short URL:</p>
-          <a href={`${window.location.origin}/api/redirect/${shortUrl}`} target="_blank" rel="noopener noreferrer" className={styles.shortUrlStyle}>
-            {`https://rashmi.jk/${shortUrl}`}
-          </a>
+      <div className={styles.contentContainer}>
+        <h1>URL Shortener</h1>
+        <div className={styles.inputContainer}>
+          <input
+            type="text"
+            value={originalUrl}
+            onChange={(e) => setOriginalUrl(e.target.value)}
+            className={styles.inputStyle}
+            placeholder="Enter your URL"
+          />
+          {originalUrl ? (
+            <button onClick={debouncedHandleShorten} className={styles.buttonStyle}>
+              Shorten URL
+            </button>
+          ) : null}
         </div>
-      )}
-      <div className={styles.recentUrlsContainer}>
+        {showShortUrl && shortUrl && (
+          <div className={styles.resultContainer}>
+            <p>Short URL:</p>
+            <a href={`${window.location.origin}/api/redirect/${shortUrl}`} target="_blank" rel="noopener noreferrer" className={styles.shortUrlStyle}>
+              {`https://rashmi.jk/${shortUrl}`}
+            </a>
+          </div>
+        )}
+      </div>
+      <div className={styles.urlListContainer}>
         <h3>Recent URLs</h3>
         <ul>
           {recentUrls.map((url) => (
             <li key={url.short_url}>
-              Guest_{getFormattedDate(url.created_at)}: 
+              Guest_{getFormattedDate(url.created_at)}:
               <a href={`${window.location.origin}/api/redirect/${url.short_url}`} target="_blank" rel="noopener noreferrer">
                 {`   https://rashmi.jk/${url.short_url}`}
               </a>
@@ -121,5 +126,6 @@ export default function Home() {
         </ul>
       </div>
     </div>
-  );
-}
+  </div>
+);
+          }
